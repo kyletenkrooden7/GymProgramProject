@@ -16,7 +16,8 @@ const register = function(req, res){
 
 /* GET 'Add generalHealth' page */
 const general = function(req, res){
-  res.render('GeneralHealth', { title: 'GeneralHealth',
+  res.render('GeneralHealth', { title: 'GeneralHealth', 
+  click: 'Click Me',
   exerciseHeaders: [{
     nameCol: 'Exercise',
     warmUpCol: 'Warm-Up Sets',
@@ -54,7 +55,7 @@ const general = function(req, res){
         name: 'Pull Ups',
         warmUpSets: '3',
         sets: '3',
-        reps: '1',
+        reps: '10',
         repMax: '60%',
         rest: '2-3 min',
         demo: 'https://youtu.be/A-cFYWvaHr0'
