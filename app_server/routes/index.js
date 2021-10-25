@@ -8,8 +8,9 @@ router.get('/', ctrlLocations.login);
 router.get('/register', ctrlLocations.register);
 router.get('/general', ctrlLocations.general);
 router.get('/buildMuscle', ctrlLocations.buildMuscle);
+router.get('/loseWeight', ctrlLocations.loseWeight);
 
 /* Other pages */
-router.get('/about', ctrlOthers.about);
+/*router.get('/about', ctrlOthers.about);*/
 
 module.exports = router;
