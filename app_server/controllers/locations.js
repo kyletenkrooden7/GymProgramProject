@@ -1,22 +1,16 @@
 /* GET 'login' page */
 const login = function(req, res){
- res.render('loginPage', {
-title: 'SwiFtyActive - Gym workout plans',
-pageHeader: { 
-title: 'SwiFtyActive', 
-strapline: 'Get Started Today' 
-} 
-});
+ res.render('loginPage', { title: 'SWIFTYACTIVE'});
 };
 
 /* GET 'Register' page */
 const register = function(req, res){
-  res.render('register', { title: 'Register' });
+  res.render('register', { title: 'SWIFTYACTIVE' });
 };
 
 /* GET 'Add generalHealth' page */
 const general = function(req, res){
-  res.render('GeneralHealth', { title: 'GeneralHealth', 
+  res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
   imageLocation: 'images/SWIFTYBANNER.jpg',
   click: 'Click Me',
   exerciseHeaders: [{
@@ -82,7 +76,7 @@ const general = function(req, res){
 
 /* GET 'Add BuildMuscle' page */
 const buildMuscle = function(req, res){
-  res.render('BuildMuscle', { title: 'BuildMuscle', 
+  res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
   imageLocation: 'images/swiftyBannerBuildMuscle.jpg',
   click: 'Click Me',
   exerciseHeaders: [{
@@ -148,7 +142,7 @@ const buildMuscle = function(req, res){
 
 /* GET 'Add LoseWeight' page */
 const loseWeight = function(req, res){
-  res.render('LoseWeight', { title: 'LoseWeight', 
+  res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
   imageLocation: 'images/swiftyBannerLoseWeight.jpg',
   click: 'Click Me',
   exerciseHeaders: [{
