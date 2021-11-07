@@ -10,7 +10,4 @@ router.get('/general', ctrlLocations.general);
 router.get('/buildMuscle', ctrlLocations.buildMuscle);
 router.get('/loseWeight', ctrlLocations.loseWeight);
 
-/* Other pages */
-/*router.get('/about', ctrlOthers.about);*/
-
 module.exports = router;

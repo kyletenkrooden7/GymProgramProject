@@ -3,7 +3,6 @@ html
   head
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title= title
-    link(rel='stylesheet' href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet' href='/stylesheets/font-awesome.min.css')
     link(rel='stylesheet' href='/stylesheets/style.css')
     link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet')
@@ -11,25 +10,54 @@ html
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')  
   body 
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      a.navbar-brand(href='#')  SWIFTYACTIVE
-      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbar1' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbar1.collapse.navbar-collapse
-        ul.navbar-nav.ml-auto
-          li.nav-item.active
-            a.nav-link(href='')
-              | Home 
-              span.sr-only (current)
-          li.nav-item
-            a.nav-link(href='/')  Logout
-            
+        a.navbar-brand(href='#')  #{title}
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarLinks' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarLinks.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href='/general') General Health               
+            li.nav-item.active
+              a.nav-link(href='/buildMuscle')  Build Muscle
+            li.nav-item.active
+              a.nav-link(href='/loseWeight')  Lose Weight
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/')  Logout          
     block content 
-    footer 
-      .bg-dark.py-4
-          .row.px-3
-            small.ml-4.ml-sm-5.mb-2(style='color: white') Copyright © 2021
-            .social-contact.ml-4.ml-sm-auto(style='color: white')
-              span.fa.fa-facebook.mr-4.text-sm
-              span.fa.fa-google-plus.mr-4.text-sm
-              span.fa.fa-linkedin.mr-4.text-sm
-              span.fa.fa-twitter.mr-4.mr-sm-5.text-sm
+    footer.section.footer-classic.context-dark.bg-image(style='background: #2d3246;')
+      .container
+        .row.row-30
+          .col-md-4.col-xl-5
+            .pr-xl-4
+              p(style='margin-top: 20px') Gym Programs tailored to your goals!
+              p.rights
+                span ©  
+                span.copyright-year 2021
+                span  
+                span All Rights Reserved.
+          .col-md-4
+            h5(style='margin-top: 20px') Contacts
+            dl.contact-list
+              dt Address:
+              dd 136 Tralee Town Centre Apartments
+            dl.contact-list
+              dt Email:
+              dd
+                a(href='mailto:#') kyle.tenkrooden@students.ittralee.ie
+          .col-md-4.col-xl-3
+            h5(style='margin-top: 20px') Links
+            ul.nav-list
+              li
+                a(href='/') Login
+              li
+                a(href='/register') Register
+              li
+                a(href='/general') General Health
+              li
+                a(href='/loseWeight') Lose Weight
+              li
+                a(href='/buildMuscle') Build Muscle
+
+
+            

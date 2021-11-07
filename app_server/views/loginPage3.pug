@@ -1,0 +1,39 @@
+link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')
+script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
+.row.banner
+    .col-12
+        h1= pageHeader.title 
+            small &nbsp;#{pageHeader.strapline}
+
+.container.login__container.my-5
+  .row.login__row
+    .col-md-6.d-flex
+      img.login__imagek.align-self-center(src='https://athleticsweekly.com/wp-content/uploads/2020/11/PT-image-via-OriGym.jpg', width='100%', height='85%', alt='')
+    .col-md-5.d-flex
+      .align-self-center.card.login__card.shadow-sm.w-100
+        .card-body
+          form(action='')
+            h2.text-muted.text-center SwiFtyActive
+            .my-5
+              h5.text-center
+                | Login
+            div
+              .form-group
+                label(for='') Email Address
+                input.form-control.form-control-lg(type='text')
+              .form-group
+                label(for='') Password
+                input.form-control.form-control-lg(type='password')
+              .custom-control.custom-checkbox
+                input#customCheckDisabled1.custom-control-input.custom-control(type='checkbox')
+                label.custom-control-label(for='customCheckDisabled1') Remember me
+              .form-group
+                a.btn.btn-primary.btn-lg.btn-block.my-3(href='#')
+                  | Login
+                .d-flex.justify-content-between
+                  a(href='#!') Password forgotten?
+                  span
+                    a(href='/register') Create account
+                .dropdown-divider.my-4
