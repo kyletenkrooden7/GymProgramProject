@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const ctrlLocations = require('../controllers/locations');
 const ctrlOthers = require('../controllers/others');
 
-/* Locations pages */
-router.get('/', ctrlLocations.login);
-router.get('/register', ctrlLocations.register);
-router.get('/general', ctrlLocations.general);
-router.get('/buildMuscle', ctrlLocations.buildMuscle);
-router.get('/loseWeight', ctrlLocations.loseWeight);
+/* All pages */
+router.get('/', ctrlOthers.login);
+router.get('/register', ctrlOthers.register);
+router.get('/general', ctrlOthers.general);
+router.get('/buildMuscle', ctrlOthers.buildMuscle);
+router.get('/loseWeight', ctrlOthers.loseWeight);
 
 module.exports = router;
