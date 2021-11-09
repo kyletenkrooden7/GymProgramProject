@@ -68,7 +68,7 @@ imageLocation: {
   required: true,
 },
 exerciseHeaders: [exerciseHeadersSchema],
-exercises: [exercisesSchema],
+exercises: [exercisesSchema]
 });
 
 mongoose.model('workoutTable', workoutTableSchema);
