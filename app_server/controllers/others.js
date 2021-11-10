@@ -1,4 +1,36 @@
-/* GET 'login' page */
+const request = require('request');
+const apiOptions = { 
+server : 'http://localhost:3000' 
+}; 
+if (process.env.NODE_ENV === 'production') { 
+apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/'; 
+}
+
+const _renderWorkout = function(req, res, responseBody){ 
+  res.render('workoutTemplate', {
+  title: 'SWIFTYACTIVE',
+  workouts: responseBody 
+  });
+  };
+  
+
+  const workoutPage = function(req, res){
+    const path = '/api/workouts'; 
+    const requestOptions = { 
+    url : apiOptions.server + path, 
+    method : 'GET', 
+    json : {}, 
+    qs : { 
+    imageLocation: "images/swiftyBannerLoseWeight.jpg"
+    } 
+    }; 
+    request(requestOptions, (err, response, body) => { 
+    _renderWorkout(req, res); 
+    } 
+    );
+    };
+    
+ //GET 'login' page 
 const login = function(req, res){
 res.render('loginPage', { title: 'SWIFTYACTIVE'});
 };
@@ -210,6 +242,7 @@ const loseWeight = function(req, res){
 module.exports = {
   login,
   register,
+  workoutPage,
   general,
   buildMuscle,
   loseWeight
