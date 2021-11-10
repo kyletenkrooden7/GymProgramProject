@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const Workout = mongoose.model('Workout');
 
 const workoutCreateOne = function (req, res) { 
-/* Workout.create({ 
+Workout.create({ 
     imageLocation: req.body.imageLocation,
+    clickMe: req.body.clickMe,
     nameCol: req.body.nameCol,
     warmUpCol: req.body.warmUpCol,
     setsCol: req.body.setsCol,
@@ -28,7 +29,7 @@ const workoutCreateOne = function (req, res) {
     .status(201)
     .json(location);
   }
-  });*/
+  });
 };
 
 const workoutReadOne = function (req, res) { 

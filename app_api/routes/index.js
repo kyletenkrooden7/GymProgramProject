@@ -9,7 +9,7 @@ router
 
 router
   .route('/register')
-  .get(ctrlOthers.userSignUpOne)
+  .get(ctrlOthers.userReadOne)
   .post(ctrlOthers.userCreateOne);
   //.get(ctrlLocations.locationsReadOne)
   //.put(ctrlLocations.locationsUpdateOne)
