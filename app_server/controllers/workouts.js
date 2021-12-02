@@ -8,28 +8,26 @@ apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/';
 
 
 const _renderWorkoutPage = (req, res, responseBody) => {
-res.render('workoutTemplate',
-{
-title: 'SWIFTYACTIVE',
-imageLocation: 'images/SWIFTYBANNER.jpg',
-workouts: responseBody
-}
-);
+    res.render('workoutTemplate',{
+        title: 'SWIFTYACTIVE',
+        imageLocation: 'images/SWIFTYBANNER.jpg',
+        click: 'Click Me',
+        workouts: responseBody.workouts[0]
+    });
 };
 
 
 const WorkoutPage = function(req, res){
     const path = '/api/workouts'; 
     const requestOptions = { 
-    url : apiOptions.server + path, 
-    method : 'GET', 
-    json : {}
+        url : apiOptions.server + path, 
+        method : 'GET', 
+        json : {}
     }; 
     request(requestOptions, (err, response, body) => { 
-    _renderWorkoutPage(req, res, body); 
-    } 
-    );
-    };
+        _renderWorkoutPage(req, res, body); 
+    });
+};
 
 
     

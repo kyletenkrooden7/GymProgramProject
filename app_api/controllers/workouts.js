@@ -70,12 +70,11 @@ const _buildWorkout = function(req, res, result) {
   let workouts = [];
   result.forEach((doc) => {
     workouts.push({
-    imageLocation:doc.imageLocation,
-    exerciseheaders: doc.exerciseHeaders,
-    exercises: doc.exercises
+      imageLocation: doc.imageLocation,
+      exerciseHeaders: doc.exerciseHeaders,
+      exercises: doc.exercises
     });
   });
-  console.log(workouts)
   return workouts;
 };
 
@@ -84,7 +83,7 @@ const workoutPlan = function (req, res) {
     [
       {
         '$match':{
-          imageLocation: {$exists:true} //loading all workouts
+          imageLocation: "images/swiftyBannerLoseWeight.jpg"
         }
       }
     ],
@@ -92,7 +91,7 @@ const workoutPlan = function (req, res) {
         const workouts = _buildWorkout(req, res, results);
         res
         .status(200)
-        .json(workouts);
+        .json({workouts});
       }
     )
   };
