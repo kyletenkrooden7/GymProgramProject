@@ -3,66 +3,66 @@ const mongoose = require('mongoose');
 const exerciseHeadersSchema = new mongoose.Schema({
 nameCol: {
 type: String,
-required: false,
+required: true,
 },
 warmUpCol: {
 type: String,
-required: false,
+required: true,
 },
 setsCol: {
 type: String,
-required: false,
+required: true,
 },
 repsCol: {
 type: String,
-required: false,
+required: true,
 },
 repMaxCol: {
 type: String,
-required: false,
+required: true,
 },
 restCol: {
 type: String,
-required: false,
+required: true,
 },
 demoCol: {
 type: String,
-required: false,
+required: true,
 }
 });
 const exercisesSchema = new mongoose.Schema({
 name: {
 type: String,
-required: false,
+required: true,
 },
 warmUpSets: {
 type: Number,
-required: false,
+required: true,
 },
 sets: {
 type: Number,
-required: false,
+required: true,
 },
 reps: {
 type: Number,
-required: false,
+required: true,
 },
 repMax: {
-type: Number,
-required: false,
+type: String,
+required: true,
 },
 rest: {
 type: String,
-required: false,
+required: true,
 },
 demo: {
 type: String,
-required: false,
+required: true,
 }
 });
 const workoutTableSchema = new mongoose.Schema({
-  imageLocation: {type: String, required: false},
-  click: {type: String, required: false},
+  imageLocation: {type: String, required: true},
+  click: {type: String, required: true},
   exerciseHeaders: [exerciseHeadersSchema],
   exercises: [exercisesSchema]
 });

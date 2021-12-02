@@ -11,6 +11,7 @@ const login = function(req, res){
 res.render('loginPage', { title: 'SWIFTYACTIVE'});
 };
 
+
 /* GET 'Register' page */
 const register = function(req, res){
   res.render('register', { title: 'SWIFTYACTIVE' });

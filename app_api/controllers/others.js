@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const Workout = mongoose.model('Workout');
 
 const userReadOne = function (req, res) {res
 .status(200)
-.json({"status" : "success"});
+.json({"status" : "success"}); //returning json objects
 };
 
 const userSignUpOne = function (req, res) {res
@@ -21,12 +20,3 @@ userReadOne,
 userSignUpOne,
 userCreateOne
 };
-
-/*
-Workout
-	.findById(req.params.workoutid) 
-	.exec((err, workout) => { 
-		res 
-			.status(200) 
-			.json(workout); 
-	});*/

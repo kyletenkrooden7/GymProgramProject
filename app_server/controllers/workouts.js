@@ -7,16 +7,16 @@ apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/';
 }
 
 
-const renderWorkoutPage = (req, res, workout) => {
+const renderWorkoutPage = (req, res, reponseBody) => {
 res.render('workoutTemplate',
 {
 title: 'SWIFTYACTIVE',
-workout
+workouts: responseBody
 }
 );
 };
 
-const getWorkoutInfo = (req, res, callback) => {
+const getWorkoutPage = (req, res, callback) => {
 const path = `/api/workouts/${req.params.workoutid}`;
 const requestOptions = {
     url: `${apiOptions.server}${path}`,
@@ -32,11 +32,11 @@ callback(req,res,data);
 );
 };
 
-const WorkoutInfo = (req, res) => {
-getWorkoutInfo(req, res,
-(req, res, responseData) => renderWorkoutPage(req, res, responseData)
-);
-};
+const WorkoutPage = (req, res) => {
+    getWorkoutPage(req, res,
+      (req, res, responseData) => renderWorkoutPage(req, res, responseData)
+    );
+  };
 
 
 /* GET 'Add generalHealth' page */
@@ -239,7 +239,7 @@ exercises: [{
 
 
 module.exports = {
-WorkoutInfo,
+WorkoutPage,
 general,
 buildMuscle,
 loseWeight

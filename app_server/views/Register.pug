@@ -10,26 +10,27 @@ block content
           p.font-italic.text-muted.mb-0 Workout plans based on your goals!
         // Registeration Form
         .col-md-7.col-lg-6.ml-auto
-          form(action='#')
+          p#register-error-message= errorMessage
+          form#register(action='/register' method='post')
             .row
               // First Name
               .input-group.col-lg-6.mb-4
                 .input-group-prepend
                   span.input-group-text.bg-white.px-4.border-md.border-right-0
                     i.fa.fa-user.text-muted
-                input#firstName.form-control.bg-white.border-left-0.border-md(type='text' name='firstname' placeholder='First Name')
+                input#firstName.form-control.bg-white.border-left-0.border-md(type='text' name='firstName' placeholder='First Name' value= firstName)
               // Last Name
               .input-group.col-lg-6.mb-4
                 .input-group-prepend
                   span.input-group-text.bg-white.px-4.border-md.border-right-0
                     i.fa.fa-user.text-muted
-                input#lastName.form-control.bg-white.border-left-0.border-md(type='text' name='lastname' placeholder='Last Name')
+                input#lastName.form-control.bg-white.border-left-0.border-md(type='text' name='lastName' placeholder='Last Name' value= lastName)
               // Email Address
               .input-group.col-lg-12.mb-4
                 .input-group-prepend
                   span.input-group-text.bg-white.px-4.border-md.border-right-0
                     i.fa.fa-envelope.text-muted
-                input#email.form-control.bg-white.border-left-0.border-md(type='email' name='email' placeholder='Email Address')
+                input#email.form-control.bg-white.border-left-0.border-md(type='email' name='email' placeholder='Email Address' value= email)
               // Phone Number
               .input-group.col-lg-12.mb-4
                 .input-group-prepend
@@ -40,17 +41,16 @@ block content
                   option(value='') +44
                   option(value='') +
                 input#phoneNumber.form-control.bg-white.border-md.border-left-0.pl-3(type='tel' name='phone' placeholder='Phone Number')
-              | .
-              // Job
+              // goals
               .input-group.col-lg-12.mb-4
                 .input-group-prepend
                   span.input-group-text.bg-white.px-4.border-md.border-right-0
                     i.fa.fa-black-tie.text-muted
-                select#job.form-control.custom-select.bg-white.border-left-0.border-md(name='jobtitle')
+                select#job.form-control.custom-select.bg-white.border-left-0.border-md(name='goals')
                   option(value='') Which option best suits your goal
-                  option(value='') Build Muscle
-                  option(value='') Lose Weight
-                  option(value='') General Health/Fitness
+                  option(value='1') Lose Weight
+                  option(value='2') Gain Muscle
+                  option(value='3') General Health/Fitness
               // Password
               .input-group.col-lg-6.mb-4
                 .input-group-prepend
@@ -62,11 +62,11 @@ block content
                 .input-group-prepend
                   span.input-group-text.bg-white.px-4.border-md.border-right-0
                     i.fa.fa-lock.text-muted
-                input#passwordConfirmation.form-control.bg-white.border-left-0.border-md(type='text' name='passwordConfirmation' placeholder='Confirm Password')
+                input#passwordConfirmation.form-control.bg-white.border-left-0.border-md(type='text' name='confirmPassword' placeholder='Confirm Password')
               // Submit Button
               .form-group.col-lg-12.mx-auto.mb-0
-                a.btn.btn-primary.btn-block.py-2(href='/general')
-                  span.font-weight-bold Create your account
+                button.btn.btn-primary.btn-block.py-2
+                  span.font-weight-bold(type='submit') Create your account
               // Divider Text
               .form-group.col-lg-12.mx-auto.d-flex.align-items-center.my-4
                 .border-bottom.w-100.ml-5
@@ -85,3 +85,4 @@ block content
                 p.text-muted.font-weight-bold
                   | Already Registered? 
                   a.text-primary.ml-2(href='/') Login
+    script(src='/javascripts/registerScript.js')
