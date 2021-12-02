@@ -17,8 +17,6 @@ const register = function(req, res){
   res.render('register', { title: 'SWIFTYACTIVE' });
 };
 
-
-
 module.exports = {
   login,
   register

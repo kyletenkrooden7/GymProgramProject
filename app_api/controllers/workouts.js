@@ -29,7 +29,7 @@ Workout.create({
   } else {
   res
     .status(201)
-    .json(workout);
+    .json({workout});
   }
   });
 };
@@ -66,8 +66,40 @@ const workoutReadOne = function (req, res) {
   }
 };
 
+const _buildWorkout = function(req, res, result) {
+  let workouts = [];
+  result.forEach((doc) => {
+    workouts.push({
+    imageLocation:doc.imageLocation,
+    exerciseheaders: doc.exerciseHeaders,
+    exercises: doc.exercises
+    });
+  });
+  console.log(workouts)
+  return workouts;
+};
+
+const workoutPlan = function (req, res) {
+  Workout.aggregate(
+    [
+      {
+        '$match':{
+          imageLocation: {$exists:true} //loading all workouts
+        }
+      }
+    ],
+      function(err, results){
+        const workouts = _buildWorkout(req, res, results);
+        res
+        .status(200)
+        .json(workouts);
+      }
+    )
+  };
+
 
 module.exports = {
+  workoutPlan,
   workoutCreateOne,
   workoutReadOne
 };

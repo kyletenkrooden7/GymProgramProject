@@ -7,16 +7,36 @@ apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/';
 }
 
 
-const renderWorkoutPage = (req, res, reponseBody) => {
+const _renderWorkoutPage = (req, res, responseBody) => {
 res.render('workoutTemplate',
 {
 title: 'SWIFTYACTIVE',
+imageLocation: 'images/SWIFTYBANNER.jpg',
 workouts: responseBody
 }
 );
 };
 
-const getWorkoutPage = (req, res, callback) => {
+
+const WorkoutPage = function(req, res){
+    const path = '/api/workouts'; 
+    const requestOptions = { 
+    url : apiOptions.server + path, 
+    method : 'GET', 
+    json : {}
+    }; 
+    request(requestOptions, (err, response, body) => { 
+    _renderWorkoutPage(req, res, body); 
+    } 
+    );
+    };
+
+
+    
+    
+
+
+/*const getWorkoutPage = (req, res, callback) => {
 const path = `/api/workouts/${req.params.workoutid}`;
 const requestOptions = {
     url: `${apiOptions.server}${path}`,
@@ -36,11 +56,11 @@ const WorkoutPage = (req, res) => {
     getWorkoutPage(req, res,
       (req, res, responseData) => renderWorkoutPage(req, res, responseData)
     );
-  };
+  };*/
 
 
 /* GET 'Add generalHealth' page */
-const general = function(req, res){
+/*const general = function(req, res){
 res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
 imageLocation: 'images/SWIFTYBANNER.jpg',
 click: 'Click Me',
@@ -104,8 +124,9 @@ exercises: [{
     }]
 });
 };
-
+*/
 /* GET 'Add BuildMuscle' page */
+/*
 const buildMuscle = function(req, res){
 res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
 imageLocation: 'images/swiftyBannerBuildMuscle.jpg',
@@ -170,8 +191,9 @@ exercises: [{
     }]
 });
 };
-
+*/
 /* GET 'Add LoseWeight' page */
+/*
 const loseWeight = function(req, res){
 res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
 imageLocation: 'images/swiftyBannerLoseWeight.jpg',
@@ -235,12 +257,9 @@ exercises: [{
         demo: 'https://youtu.be/ykJmrZ5v0Oo'
     }]
 });
-};
+};*/
 
 
 module.exports = {
-WorkoutPage,
-general,
-buildMuscle,
-loseWeight
+WorkoutPage
 };

@@ -17,12 +17,12 @@ router
   //workouts
 
 router
-  .route('/workouts/')
+  .route('/workouts')
+  .get(ctrlWorkouts.workoutPlan)
   .post(ctrlWorkouts.workoutCreateOne)
 
 router
   .route('/workouts/:workoutid')
   .get(ctrlWorkouts.workoutReadOne)
-
 
 module.exports = router;
