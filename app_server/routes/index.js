@@ -6,12 +6,10 @@ const ctrlWorkouts = require('../controllers/workouts');
 
 /* All pages */
 
-router.get('/login', ctrlOthers.login);
+router.get('/', ctrlOthers.login);
 router.get('/register', ctrlOthers.register);
-//router.get('/general', ctrlWorkouts.general);
-//router.get('/buildMuscle', ctrlWorkouts.buildMuscle);
-//router.get('/loseWeight', ctrlWorkouts.loseWeight);
-router.get('/', ctrlWorkouts.WorkoutPage);
+router.get('/general', ctrlWorkouts.generalWorkoutPage);
+router.get('/buildMuscle', ctrlWorkouts.buildWorkoutPage);
+router.get('/loseWeight', ctrlWorkouts.loseWorkoutPage); 
 
 module.exports = router;
-

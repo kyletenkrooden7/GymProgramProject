@@ -78,7 +78,7 @@ const _buildWorkout = function(req, res, result) {
   return workouts;
 };
 
-const workoutPlan = function (req, res) {
+const LoseWorkoutPlan = function (req, res) {
   Workout.aggregate(
     [
       {
@@ -94,11 +94,48 @@ const workoutPlan = function (req, res) {
         .json({workouts});
       }
     )
-  };
+};
 
+const BuildWorkoutPlan = function (req, res) {
+  Workout.aggregate(
+    [
+      {
+        '$match':{
+          imageLocation: "images/swiftyBannerBuildMuscle.jpg"
+        }
+      }
+    ],
+      function(err, results){
+        const workouts = _buildWorkout(req, res, results);
+        res
+        .status(200)
+        .json({workouts});
+      }
+    )
+};
+
+const GeneralWorkoutPlan = function (req, res) {
+  Workout.aggregate(
+    [
+      {
+        '$match':{
+          imageLocation: "images/SWIFTYBANNER.jpg"
+        }
+      }
+    ],
+      function(err, results){
+        const workouts = _buildWorkout(req, res, results);
+        res
+        .status(200)
+        .json({workouts});
+      }
+    )
+};
 
 module.exports = {
-  workoutPlan,
+  LoseWorkoutPlan,
+  BuildWorkoutPlan,
+  GeneralWorkoutPlan,
   workoutCreateOne,
   workoutReadOne
 };

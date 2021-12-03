@@ -8,21 +8,35 @@ const ctrlWorkouts = require('../controllers/workouts');
 //others
 router
   .route('/')
-  .get(ctrlOthers.userReadOne) //login page
+  .get(ctrlOthers.userSignIn) //login page
 
 router
   .route('/register')
-  .post(ctrlOthers.userCreateOne); //registration page
+  .post(ctrlOthers.userCreate); //registration page
 
   //workouts
 
 router
-  .route('/workouts')
-  .get(ctrlWorkouts.workoutPlan)
-  .post(ctrlWorkouts.workoutCreateOne)
+  .route('/loseWeight')
+  .get(ctrlWorkouts.LoseWorkoutPlan)
+ 
+
+  router
+  .route('/general')
+  .get(ctrlWorkouts.GeneralWorkoutPlan)
+
+
+  router
+  .route('/buildMuscle')
+  .get(ctrlWorkouts.BuildWorkoutPlan)
+  
 
 router
-  .route('/workouts/:workoutid')
+  .route('/workouts/:workoutid') 
   .get(ctrlWorkouts.workoutReadOne)
+  
+router
+  .route('/workouts') 
+  .post(ctrlWorkouts.workoutCreateOne)
 
 module.exports = router;
