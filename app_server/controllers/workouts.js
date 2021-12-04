@@ -6,15 +6,6 @@ if (process.env.NODE_ENV === 'production') {
 apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/'; 
 }
 
-
-const _renderWorkoutPage = (req, res, responseBody) => {
-    res.render('workoutTemplate',{
-        title: 'SWIFTYACTIVE',
-        click: 'Click Me',
-        workouts: responseBody.workouts[0]
-    });
-};
-
 const loseWorkoutPage = function(req, res){
     const path = '/api/loseWeight'; 
     const requestOptions = { 
@@ -24,6 +15,14 @@ const loseWorkoutPage = function(req, res){
     }; 
     request(requestOptions, (err, response, body) => { 
         _renderWorkoutPage(req, res, body); 
+    });
+};
+
+const _renderWorkoutPage = (req, res, responseBody) => {
+    res.render('workoutTemplate',{
+        title: 'SWIFTYACTIVE',
+        click: 'Click Me',
+        workouts: responseBody.workouts
     });
 };
 
