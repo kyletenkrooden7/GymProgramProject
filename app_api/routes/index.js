@@ -7,11 +7,11 @@ const ctrlWorkouts = require('../controllers/workouts');
 
 //others
 router
-  .route('/')
+  .route('/login')
   .get(ctrlOthers.userSignIn) //login page
 
 router
-  .route('/register')
+  .route('/')
   .post(ctrlOthers.userCreate); //registration page
 
   //workouts
