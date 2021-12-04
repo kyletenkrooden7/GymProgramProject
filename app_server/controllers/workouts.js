@@ -22,7 +22,7 @@ const _renderWorkoutPage = (req, res, responseBody) => {
     res.render('workoutTemplate',{
         title: 'SWIFTYACTIVE',
         click: 'Click Me',
-        workouts: responseBody.workouts
+        workouts:  responseBody.workouts
     });
 };
 
