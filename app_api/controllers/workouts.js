@@ -88,7 +88,7 @@ const LoseWorkoutPlan = function (req, res) {
       }
     ],
       function(err, results){
-        const workouts = _buildWorkout(req, res, results);
+        const workouts = _buildWorkout(req, res, results)[0];
         res
         .status(200)
         .json({workouts});
@@ -106,7 +106,7 @@ const BuildWorkoutPlan = function (req, res) {
       }
     ],
       function(err, results){
-        const workouts = _buildWorkout(req, res, results);
+        const workouts = _buildWorkout(req, res, results)[0];
         res
         .status(200)
         .json({workouts});
@@ -124,7 +124,7 @@ const GeneralWorkoutPlan = function (req, res) {
       }
     ],
       function(err, results){
-        const workouts = _buildWorkout(req, res, results);
+        const workouts = _buildWorkout(req, res, results)[0];
         res
         .status(200)
         .json({workouts});
