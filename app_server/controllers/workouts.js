@@ -3,8 +3,10 @@ const apiOptions = {
 server : 'http://localhost:3000' 
 }; 
 if (process.env.NODE_ENV === 'production') { 
-apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/'; 
+app.set('port', process.env.PORT || 3000);
+//apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/'; 
 }
+
 
 const loseWorkoutPage = function(req, res){
     const path = '/api/loseWeight'; 
@@ -22,7 +24,7 @@ const _renderWorkoutPage = (req, res, responseBody) => {
     res.render('workoutTemplate',{
         title: 'SWIFTYACTIVE',
         click: 'Click Me',
-        workouts:  responseBody.workouts
+        workouts: responseBody.workouts
     });
 };
 
