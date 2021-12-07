@@ -12,3 +12,4 @@ catch (e) {
   console.log("could not connect");
 }
 require('./workouts');
+require('./others')
