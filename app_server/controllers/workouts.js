@@ -2,9 +2,8 @@ const request = require('request');
 const apiOptions = { 
 server : 'http://localhost:3000' 
 }; 
-if (process.env.NODE_ENV === 'production') { 
-app.set('port', process.env.PORT || 5000);
-//apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/'; 
+if (process.env.NODE_ENV === 'production') {
+apiOptions.server = 'https://intense-ocean-11035.herokuapp.com/'; 
 }
 
 
