@@ -12,5 +12,5 @@ function DisplayMessage(valid)
 
 function submitForm()
 {
-  document.getElementById("loginForm").submit();
+    document.getElementById("loginForm").submit();
 }

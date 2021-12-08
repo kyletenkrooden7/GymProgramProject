@@ -83,7 +83,7 @@ const LoseWorkoutPlan = function (req, res) {
     [
       {
         '$match':{
-          imageLocation: {$exists:true}
+          imageLocation: "images/swiftyBannerLoseWeight.jpg"
         }
       }
     ],
