@@ -23,7 +23,7 @@ const login = function(req,res){
   });
 }
 
-//Code refactored from software tools project
+//Code refactored from software tools project - this will be used to log in to a registered account
 /*const verifyLogin = function(req,res) {
   var email = req.body.email;
   var password = req.body.password;
@@ -53,6 +53,48 @@ const login = function(req,res){
           }
       });
   });
+}*/
+//Code refactored from software tools project - this will be used to post data to mongoDB
+/*
+const register = function(req, res){ 
+    res.render('register', { title: 'Register' }); 
+};
+
+const processRegistration = function(req, res){
+    var fname = req.body.firstName;
+    var lname = req.body.lastName;
+    var email = req.body.email;
+    var password = req.body.password;
+    var gender = req.body.inlineRadioOptions;
+    var goal = req.body.goals;
+
+    var data = new User({
+        "fname": fname,
+        "lname": lname,
+        "email": email,
+        "pword": password,
+        "gender": gender,
+        "option": goal
+    });
+
+    const collection = connection.db.collection("users");
+    let results = collection.findOne({email: email});
+        results.then(function(value){
+            if(value)
+                res.render('register', {
+                    errorMessage: 'An account with the provided email address already exists! Please try again.',
+                    firstName: fname,
+                    lastName: lname,
+                    email: email
+                });
+            else{
+                data.save(function (err, data){
+                    if(err) 
+                        return console.log(err);
+                    res.redirect('../login');
+                });
+            }
+        });
 }*/
 
 
