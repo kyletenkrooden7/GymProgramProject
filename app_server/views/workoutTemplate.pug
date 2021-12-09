@@ -1,10 +1,10 @@
 extends layout 
 block content
   .well 
-    img(src= workouts.imageLocation width='100%' height='100%')
+    img(src= imageLocation width='100%' height='100%')
     table.table
       thead
-      each header in workouts.exerciseHeaders
+      each header in exerciseHeaders
         tr
           th= header.nameCol
           th= header.warmUpCol
@@ -14,7 +14,7 @@ block content
           th= header.restCol
           th= header.demoCol
       tbody
-      each exercise in workouts.exercises
+      each exercise in exercises
         tr
           td= exercise.name
           td= exercise.warmUpSets
