@@ -54,7 +54,7 @@ const generalWorkoutPage = function(req, res){
 /* GET 'Add generalHealth' page */
 const general = function(req, res){
     res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
-    imageLocation: '../images/swiftybanner.jpg',
+    imageLocation: '../../public/images/swiftybanner.jpg',
     click: 'Click Me',
     exerciseHeaders: [{
       nameCol: 'Exercise',
@@ -120,7 +120,7 @@ const general = function(req, res){
   /* GET 'Add BuildMuscle' page */
   const buildMuscle = function(req, res){
     res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
-    imageLocation: '../images/swiftybannerbuildmuscle.jpg',
+    imageLocation: '../../public/images/swiftybannerbuildmuscle.jpg',
     click: 'Click Me',
     exerciseHeaders: [{
       nameCol: 'Exercise',
@@ -186,7 +186,7 @@ const general = function(req, res){
   /* GET 'Add LoseWeight' page */
   const loseWeight = function(req, res){
     res.render('workoutTemplate', { title: 'SWIFTYACTIVE',
-    imageLocation: '../images/swiftybannerloseweight.jpg',
+    imageLocation: '../../public/images/swiftybannerloseweight.jpg',
     click: 'Click Me',
     exerciseHeaders: [{
       nameCol: 'Exercise',
